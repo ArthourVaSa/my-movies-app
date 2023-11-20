@@ -1,5 +1,5 @@
-import { Movie } from "../../entities/entities";
+import { MovieEntity } from "../../entities/entities";
 
 export interface LocalApiMovies {
-    getMovies(): Promise<Movie[]>;
+    getMovies(): Promise<MovieEntity[]>;
 }

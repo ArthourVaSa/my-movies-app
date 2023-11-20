@@ -1,14 +1,13 @@
 import { useEffect, useState } from "react";
 
 import { MovieRepository } from "../../../domain/repository/MovieRepository";
-import { Movie } from "../../../domain/entities/entities";
-import { MovieEntity } from "../../../domain/entities/Movie";
+import { MovieEntity } from "../../../domain/entities/entities";
 
 export const useMovie = (movieRepository: MovieRepository) => {
-  const [movies, setMovies] = useState<Movie[]>([]);
+  const [movies, setMovies] = useState<MovieEntity[]>([]);
   const [search, setSearch] = useState<string>("");
   const [genre, setGenre] = useState<string>("all");
-  const [filteredMovies, setFilteredMovies] = useState<Movie[]>([]);
+  const [filteredMovies, setFilteredMovies] = useState<MovieEntity[]>([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -32,23 +31,22 @@ export const useMovie = (movieRepository: MovieRepository) => {
     setGenre(value);
 
     if (value === "all") {
-        setFilteredMovies(movies);
-        return;
+      setFilteredMovies(movies);
+      return;
     }
-    
+
     let initialFilteredMovies: MovieEntity[] = [];
     movies.forEach((movie) => {
-        if (movie.genre.toLowerCase().includes(value.toLowerCase())) {
-            initialFilteredMovies = [...initialFilteredMovies, movie];
-        }
-        setFilteredMovies(initialFilteredMovies);
+      if (movie.genre.toLowerCase().includes(value.toLowerCase())) {
+        initialFilteredMovies = [...initialFilteredMovies, movie];
+      }
+      setFilteredMovies(initialFilteredMovies);
     });
   };
 
-  const filteredMoviesSearching = (moviesList: Movie[]) => {
+  const filteredMoviesSearching = (moviesList: MovieEntity[]) => {
     if (search.length === 0 && genre === "all") {
-        // setFilteredMovies(movies);
-      return movies
+      return movies;
     }
 
     let initialFilteredMovies: MovieEntity[] = [];
@@ -75,8 +73,6 @@ export const useMovie = (movieRepository: MovieRepository) => {
         (movie, index, self) =>
           index === self.findIndex((m) => m.id === movie.id)
       );
-
-    // setFilteredMovies(filteredMoviesWithoutDuplicates);
 
     return filteredMoviesWithoutDuplicates;
   };

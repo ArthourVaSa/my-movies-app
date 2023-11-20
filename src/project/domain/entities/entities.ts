@@ -1,4 +1,4 @@
-import { Movie } from "./Movie";
+import { MovieEntity } from "./Movie";
 import { Genres } from "./Genre";
 
-export type { Movie, Genres };
+export type { MovieEntity, Genres };
