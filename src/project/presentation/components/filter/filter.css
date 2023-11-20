@@ -1,0 +1,81 @@
+.filter-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 20px 0;
+  width: 100%;
+  height: 5rem;
+  background-color: gray;
+}
+
+input {
+  padding: 10px 15px;
+  border: 2px solid #aaa;
+  border-radius: 4px;
+  margin: 10px;
+  outline: none;
+  box-sizing: border-box;
+  transition: 0.3s;
+}
+
+input:focus {
+  border-color: dodgerblue;
+  box-shadow: 0 0 8px 0 dodgerblue;
+}
+
+.modal-button {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: whitesmoke;
+  border: none;
+  cursor: pointer;
+}
+
+.modal {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  top: 50px;
+  background-color: white;
+  color: black;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  transition: visibility 0s, opacity 0.5s linear;
+}
+
+.modal-button:hover .modal {
+  visibility: visible;
+            opacity: 1;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+.modal-button:hover .modal {
+  animation: fadeIn 0.5s;
+}
+
+@media screen and (max-width: 768px) {
+  .filter-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 0 0 20px 0;
+    width: 100%;
+    height: 5rem;
+    background-color: gray;
+  }
+}

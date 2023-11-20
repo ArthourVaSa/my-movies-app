@@ -1,0 +1,66 @@
+.movie-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    width: 25rem;
+    height: 12rem;
+    margin: 20px;
+    background-color: white;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+.movie-container:hover {
+    background-color: rgb(112, 188, 238);
+    cursor: pointer;
+    color: lightblue;
+    opacity: 0.9;
+    height: 15rem;
+}
+
+.movie-container:active {
+    background-color: white;
+    opacity: 0.7;
+    color: cadetblue;
+}
+
+img {
+    border-radius: 20px 0 0 20px;
+    width: 60%;
+    height: 100%;
+}
+
+.data-container {
+    margin: 20px;
+    width: 70%;
+    height: 90%;
+}
+
+article {
+    margin-bottom: 10px;
+    height: 20%;
+}
+
+.description {
+    box-sizing: border-box;
+    height: max-content;
+}
+
+
+h3 {
+    color: grey;
+    font-size: 14px;
+    font-family: Geneva, Tahoma, sans-serif;
+    text-align: left;
+    margin: 0;
+}
+
+p {
+    color: rgb(16, 14, 14);
+    font-size: 12px;
+    margin: auto;
+}
