@@ -8,7 +8,7 @@ export class MoviesApiLocalJson implements LocalApiMovies {
   async getMovies(): Promise<MovieEntity[]> {
     let moviesResponse: MoviesResponse;
     try {
-        const response = await axios.get("movies.json");
+        const response = await axios.get("assets/movies.json");
         // const response = await axios.get("../../../../assets/movies.json");
       moviesResponse = response.data as MoviesResponse;
       return transformMoviesResponseToMovies(moviesResponse);
